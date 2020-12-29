@@ -6,6 +6,8 @@ from flask_healthz import HealthError
 
 app = Flask(__name__)
 app.register_blueprint(healthz, url_prefix="/healthz")
+app.config.from_envvar("FLASK_CONFIG")
+
 
 @app.route("/")
 def hello():
