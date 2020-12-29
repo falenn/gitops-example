@@ -14,6 +14,7 @@ def hello():
 def liveness():
   pass
 
+# readiness probe. - use to test connections to dbs, external dependencies, etc.
 def readiness():
   try:
     True
