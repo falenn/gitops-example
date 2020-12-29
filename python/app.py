@@ -11,6 +11,7 @@ app.register_blueprint(healthz, url_prefix="/healthz")
 def hello():
   return "Hello out there!"
 
+# liveness probe.  If the app is functioning, return a pass (True)
 def liveness():
   pass
 
