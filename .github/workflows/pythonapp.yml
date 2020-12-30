@@ -9,7 +9,7 @@ on:
     - '!dev'
     - '!bug/**'
     paths:
-    - 'python/*'
+    - 'python/**'
 
 jobs:
   build:
