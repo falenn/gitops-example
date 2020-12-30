@@ -1,0 +1,13 @@
+branches:
+  - label: enhancement
+    prefix: feature/
+    name: dev
+  - label: bug
+    prefix: bugfix/
+    name: staging
+  - label: '*'
+    prefix: issue/
+    name: dev
+mode: auto
+branchName: '${issue.number}-${issue.title}'
+autoCloseIssue: true
