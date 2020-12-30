@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-webapp-deployment
+  labels:
+    app: webapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: webapp
+        image: falenn/python-gitops:v1.2
+        ports:
+        - containerPort: 5000
+      livenessProbe:
+      httpGet:
+        path: /healthz/live
+        port: 5000
+      initialDelaySeconds: 3
+      periodSeconds: 3
+      readinessProbe:
+      httpGet:
+        path: /healthz/ready
+        port: 5000
+      initialDelaySeconds: 5
+      periodSeconds: 10
+
