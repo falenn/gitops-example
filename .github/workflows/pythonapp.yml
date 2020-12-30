@@ -26,8 +26,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r ./python/webapp/requirements.txt
     - name: Build and Push Image
+      env:
+        VERSION: "v1.0"
       run: |
         cd ./python
         echo "${{ secrets.DOCKERHUB }}" | docker login -u falenn --password-stdin
-        docker image build -t falenn/python-gitops:v1.0 .
-        docker push falenn/python-gitops:v1.0
+        docker image build --build-arg version=$VERSION -t falenn/python-gitops:$VERSION .
+        docker push falenn/python-gitops:$VERSION
