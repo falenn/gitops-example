@@ -3,5 +3,4 @@ from webapp import app
 
 @app.route("/")
 def root():
-  #return "Hello World"
   return render_template('index.html') 
