@@ -2,6 +2,12 @@ name: Python application
 
 on: 
   push:
+    branches:    
+    # Push events on main branch
+    - 'main'
+    - 'releases/**'
+    - '!dev'
+    - '!bug/**'
     paths:
     - 'python/*'
 

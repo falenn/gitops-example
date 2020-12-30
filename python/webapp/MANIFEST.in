@@ -1,0 +1,4 @@
+include webapp/defaults.cfg
+graft webapp/static
+graft webapp/templates
+global-exlude *.pyc
