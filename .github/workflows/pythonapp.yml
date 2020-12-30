@@ -31,5 +31,5 @@ jobs:
       run: |
         cd ./python
         echo "${{ secrets.DOCKERHUB }}" | docker login -u falenn --password-stdin
-        docker image build --label version=$VERSION -t falenn/python-gitops:$VERSION .
+        docker image build --build-arg version=$VERSION -t falenn/python-gitops:$VERSION .
         docker push falenn/python-gitops:$VERSION
