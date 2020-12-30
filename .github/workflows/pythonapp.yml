@@ -5,7 +5,7 @@ on:
     branches:    
     # Push events on main branch
     - 'main'
-    - 'release-candidates/**'
+    - 'release-candidates'
     - '!dev'
     - '!bug/**'
     paths:
@@ -27,7 +27,7 @@ jobs:
         pip install -r ./python/webapp/requirements.txt
     - name: Build and Push Image
       env:
-        APP_VERSION: "v1.1"
+        APP_VERSION: "v1.2"
       run: |
         cd ./python
         echo "${{ secrets.DOCKERHUB }}" | docker login -u falenn --password-stdin
