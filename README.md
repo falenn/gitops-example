@@ -1,5 +1,7 @@
 # this is the readme
 
+# Set the Github user for this operator
+export GHUSER=<your username>
 
 # Installing FluxCD
 
