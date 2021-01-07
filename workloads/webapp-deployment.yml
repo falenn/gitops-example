@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  namespace: sample
+  labels: 
+    app: python-webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: python-webapp
+  template:
+    metadata:
+      labels:
+        app: python-webapp
+    spec:
+      containers:
+      - name: python-webapp
+        image: falenn/python-gitops:v1.1
+        ports:
+        - containerPort: 5000
