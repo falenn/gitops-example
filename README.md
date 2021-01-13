@@ -1,4 +1,8 @@
-# this is the readme
+# Gitops-example
+Using Github pipeline and FluxCD (Continuous Deployment), we are able to invoke new Docker Image builds upon branch check-in and deployment via Flux Operater and deploy key.
+
+https://hub.docker.com/r/falenn/python-gitops/tags?page=1&ordering=last_updated
+
 
 # Set the Github user for this operator
 export GHUSER=<your username>
